@@ -1,4 +1,4 @@
-# Here is the most basic syntax of a Ruby method:
+puts "Here is the most basic syntax of a Ruby method:"
 def welcome   # This is the header
   puts "Hello World! You're in Ruby!"   # This is the body
 end
@@ -10,9 +10,10 @@ welcome
 # That's it!
 
 
-# Methods can take arguments
+puts
+puts "Methods can take arguments:"
 def oneArgument(arg)  # Notice that Ruby is much less picky than C  :)
-  puts "\nYou're in a method with one argument"
+  puts "You're in a method with one argument"
   puts arg
 end
 
@@ -20,23 +21,38 @@ end
 oneArgument(42)
 
 
-# Methods can very easily take a variable number of arguments
-# This is called a splat argument
+puts
+puts "Methods can very easily take a variable number of arguments.
+This is called a splat argument."
 def splatArgument(arg1, *splat)
-  puts "\nYou're in a method with a variable number of arguments. Powerful!"
+  puts "  You're in a method with a variable number of arguments. Powerful!"
   puts "arg1: #{arg1}"
   splat.each { |argN| puts "splat: #{argN}" }
+  puts
 end
 
+puts "One argument, no splat arguments:"
 splatArgument("a1")
+puts "On argument, four splat arguments:"
 splatArgument("a1", "v1", "v2", "v3", "v4")
+puts "On argument, two splat arguments:"
 splatArgument("a1", 42, "v2")
 
 
-# Values can be return using the keyword return
+puts "Values can be returned using the keyword return, but
+I think it's more idiomatic to simply state the vairable name:"
 def returnValue(arg1)
-  return arg1
+  arg1
 end
 
-puts "\nThis method should return the argument that you pass into it:"
-puts returnValue(77)
+puts "Argument passed: #{returnValue(77)}"
+puts
+
+
+puts "A method's arguments can have a default value:"
+def defaultArgs(arg1 = "default")
+  puts arg1
+end
+
+defaultArgs
+defaultArgs("hello!")

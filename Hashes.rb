@@ -2,36 +2,84 @@
 # Hashes are a key-value pair. The key can be used to gain easy access to the value.
 # It's much like a database or a function.
 
-hashExample = Hash.new("Default value (if key is not found)")
+# Creating a hash using literal notation
+hashEx = {
+  "key1" => "value1",
+  "key2" => "value2",
+  "key3" => "value3",
+  "key4" => "value4",
+  "key5" => "value5",
+}
 
-# Prints entire contents of the hash, which is currently nothing
-puts "Hash contents:"
-puts hashExample
+# Create a hash using the Hash object
+hashEx2 = Hash.new("Default value (if key is not found)")
 
-# Element won't be found so this prints default value
-puts "\nValue for key notAnElement:"
-puts hashExample["notAnElement"]
+# Display the contents of a hash
+puts "Contents of hashEx:"
+puts hashEx
+puts
 
-# Add hash elements using
-# <name>["key"] = "value"
-hashExample["e1"] = 1
-hashExample["e2"] = "e2"
+puts "Contents of hashEx2:"
+puts hashEx2
+puts
 
-# Prints entire contents of the hash
-puts "\nHash contents:"
-puts hashExample
-
-# To access an individual element of a hash,
-# name["key"]
-puts "\nValue for key e1:"
-puts hashExample["e1"]
-puts "\nValue for key e2:"
-puts hashExample["e2"]
-
-# To iterate over the entire hash, you'll probably need two iterators:
-# one for the key and one for the hash
-puts "\nIterating over the entire hash:"
-hashExample.each do |key, value|
-  puts "The key is: #{key}"
-  puts "The value is: #{hashExample[key]}"
+#Iterate over the hash keys
+puts "Iterate over all key-value pairs in hashEx: |pair|"
+hashEx.each do |pair|
+  puts pair
 end
+puts
+
+puts "Iterate over all key-value pairs in hashEx2: |pair|"
+hashEx2.each do |pair|
+  puts pair
+end
+puts
+
+puts "Iterate over all keys and reference all values of hashEx: |key, value|"
+puts "Reference 'key' and 'value'"
+hashEx.each do |key, value|
+  puts key + " " + value
+end
+puts
+
+puts "Iterate over all keys and reference all values of hashEx2: |key, value|"
+puts "Reference 'key' and 'value'"
+hashEx2.each do |key, value|
+  puts key + " " + value
+end
+puts
+
+puts "Iterate over all keys and reference all values of hashEx: |key, value|"
+puts "Reference 'key' and hashEx[key]"
+hashEx.each do |key, value|
+  puts key + " " + hashEx[key]
+end
+puts
+
+puts "Iterate over all keys and reference all values of hashEx2: |key, value|"
+puts "Reference 'key' and hashEx2[key]"
+hashEx2.each do |key, value|
+  puts key + " " + hashEx2[key]
+end
+puts
+
+puts "Reference an invalid key:"
+# using a variable
+emptyKey=
+puts "hashEx[emptyKey]: #{hashEx[emptyKey]}"
+puts "hashEx2[emptyKey]: #{hashEx2[emptyKey]}"
+
+#using a string
+puts "hashEx[\"notAKey\"]: #{hashEx["notAKey"]}"
+puts "hashEx2[\"notAKey\"]: #{hashEx2["notAKey"]}"
+puts
+
+#Fill a hash with data
+puts "Filling a hash with data:"
+newKey = "newKey"
+hashEx[newKey] = "newValue"
+hashEx2[newKey] = "newValue"
+
+puts "hashEx[newKey] = #{hashEx[newKey]}"
+puts "hashEx2[newKey] = #{hashEx2[newKey]}"
