@@ -13,7 +13,10 @@ class VarDemo
     @var
   end
 
+  #Custom attribute write
   def increment
+    #Note the use of 'self'
+    #oi.
     self.var = var + 1
   end
 
