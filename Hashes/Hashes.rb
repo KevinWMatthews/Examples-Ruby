@@ -83,3 +83,16 @@ hashEx2[newKey] = "newValue"
 
 puts "hashEx[newKey] = #{hashEx[newKey]}"
 puts "hashEx2[newKey] = #{hashEx2[newKey]}"
+puts
+puts
+
+puts "HOLD THE PHONE! The syntax has changed:"
+puts "No more hash rockets!"
+new_hash = {
+  one: 1,   # these are still symbols!
+  two: 2,
+  three: 3
+}
+puts "#{:three} #{new_hash[:three]}"
+puts
+
