@@ -2,6 +2,19 @@
 # Hashes are a key-value pair. The key can be used to gain easy access to the value.
 # It's much like a database or a function.
 
+
+puts "HOLD THE PHONE! The syntax has changed:"
+puts "No more hash rockets!"
+new_hash = {
+  one: 1,   # these are still symbols!
+  two: 2,
+  three: 3
+}
+puts "#{:three} #{new_hash[:three]}"
+puts
+
+
+
 # Creating a hash using literal notation
 hashEx = {
   "key1" => "value1",
@@ -85,14 +98,3 @@ puts "hashEx[newKey] = #{hashEx[newKey]}"
 puts "hashEx2[newKey] = #{hashEx2[newKey]}"
 puts
 puts
-
-puts "HOLD THE PHONE! The syntax has changed:"
-puts "No more hash rockets!"
-new_hash = {
-  one: 1,   # these are still symbols!
-  two: 2,
-  three: 3
-}
-puts "#{:three} #{new_hash[:three]}"
-puts
-
